@@ -1,0 +1,8 @@
+/*
+ * Aliases plugin styles (ie6 hacks)
+ */
+
+#aliases-table tbody td.control a
+{
+  background-image: url(icons.gif);
+}

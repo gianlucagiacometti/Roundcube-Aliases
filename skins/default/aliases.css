@@ -1,0 +1,165 @@
+/*
+ * Aliases plugin styles
+ */
+
+#aliases-list
+{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 240px;
+}
+
+.aliases-boxcontent
+{
+  position: absolute;
+  top: 0;
+  bottom: 23px;
+  width: 100%;
+}
+
+#aliases-list-filters
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  border: 1px solid #999999;
+  overflow: auto;
+}
+
+#aliases-list div.boxfooter
+{
+  border: 1px solid #999999;
+  border-top: 0;
+  width: 100%;
+}
+
+#aliases-details
+{
+  position: absolute;
+  top: 0;
+  left: 250px;
+  right: 0;
+  bottom: 0;
+  border: 1px solid #999999;
+}
+
+span.disableLink
+{
+  float: right;
+  width: 200px;
+  text-align: right;
+}
+
+#aliases-table
+{
+  width: 100%;
+}
+
+#aliases-table tbody td
+{
+  cursor: default;
+}
+
+#aliases-table tbody td.control
+{
+  text-align: right;
+}
+
+#aliases-table tbody td.control a
+{
+  display: block;
+  float: right;
+  width: 16px;
+  height: 16px;
+  background-image: url(icons.png);
+}
+
+#aliases-table tbody td.control a.up_arrow
+{
+  background-position: 0 0;
+}
+
+#aliases-table tbody td.control a.down_arrow
+{
+  background-position: 0 -18px;
+}
+
+table.records-table td.msg
+{
+  vertical-align: top;
+}
+
+table.records-table td.vacdaysexp
+{
+  width: 398px;
+  white-space: -moz-pre-wrap !important;
+  white-space: pre-wrap !important;
+  white-space: pre;
+}.button {
+  cursor: pointer;
+}
+
+#listbuttons
+{
+  position: absolute;
+  bottom: 18px;
+  left: 20px;
+}
+
+.droptarget
+{
+  border-top: 2px solid #000000;
+}
+
+.droptargetend
+{
+  border-bottom: 2px solid #000000;
+}
+
+#aliasesrsdialog h3
+{
+  color: #333;
+  font-size: normal;
+  margin-top: 0.5em;
+  margin-bottom: 1em;
+}
+
+#aliasesrsdialog table td.title
+{
+  color: #666;
+  text-align: right;
+  padding-right: 1em;
+  white-space: nowrap;
+}
+
+#aliasesrsdialog table td input
+{
+  width: 20em;
+}
+
+#aliasesrsdialog .formbuttons
+{
+  margin-top: 1.5em;
+  text-align: center;
+}
+
+input.inputmask
+{
+  color: #999999;
+}
+
+#aliasesactionsmenu a.selected
+{
+  font-weight: bold;
+}
+
+#aliases-advbuttons
+{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}

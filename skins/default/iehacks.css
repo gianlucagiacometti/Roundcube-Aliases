@@ -1,0 +1,35 @@
+/*
+ * Aliases plugin styles (ie hacks)
+ */
+
+#aliases-list
+{
+  height: expression(parseInt(this.parentNode.offsetHeight)+'px');
+}
+
+.aliases-boxcontent
+{
+  height: expression(parseInt(this.parentNode.offsetHeight)-25+'px');
+}
+
+#aliases-list-filters
+{
+  height: expression(parseInt(this.parentNode.offsetHeight)+'px');
+  width: expression(parseInt(this.parentNode.offsetWidth)+'px');
+}
+
+#aliases-details
+{
+  height: expression(parseInt(this.parentNode.offsetHeight)+'px');
+  width: expression((parseInt(this.parentNode.offsetWidth)-250)+'px');
+}
+
+table.records-table td.vacdaysexp
+{
+  word-wrap: break-word;
+}
+
+img.nohtc
+{
+  behavior: none;
+}
