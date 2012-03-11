@@ -1,2 +1,9 @@
 2012-03-11 Gianluca Giacometti <php@gianlucagiacometti.it>
-[RELEASE]: version 0.7.1
+        [RELEASE]: version 0.7.1
+
+2012-03-11 Gianluca Giacometti <php@gianlucagiacometti.it>
+        * aliases.php: added value for modification date and lowercase for input post names
+        * config.inc.php: fixed update query with modification date
+        * correct localization files
+        * tested with RC 0.7.2
+        [RELEASE]: version 0.7.2

@@ -4,7 +4,7 @@
 
  +-----------------------------------------------------------------------+
  | PostfixAdmin Aliases Plugin for RoundCube                             |
- | Version: 0.7.1                                                        |
+ | Version: 0.7.2                                                        |
  | Author: Gianluca Giacometti <php@gianlucagiacometti.it>               |
  | Copyright (C) 2012 Gianluca Giacometti                                |
  | License: GNU General Public License                                   |
@@ -200,7 +200,7 @@ class aliases extends rcube_plugin {
 
 		$this->_startup();
 
-		$name = trim(get_input_value('_name', RCUBE_INPUT_POST, true));
+		$name = mb_strtolower(trim(get_input_value('_name', RCUBE_INPUT_POST, true)), 'UTF-8');
 		$iid = trim(get_input_value('_iid', RCUBE_INPUT_POST));
 
 		$driver = $this->home . '/lib/drivers/' . $this->rc->config->get('aliases_driver', 'sql').'.php';
@@ -265,6 +265,7 @@ class aliases extends rcube_plugin {
 			$elements = explode("@", trim($data['goto']));
 			$data['address'] = $this->alias[$iid]['name'] . "@" . $elements[1];
 			$data['newalias'] = $name . "@" . $elements[1];
+			$data['modified'] = date('Y-m-d H:i:s');
 			$ret = mail_alias('update', $data);
 			if (!$this->check_driver_error($ret)) { return FALSE; }
 			$this->api->output->command('display_message', $this->gettext('aliasesaliasupdated'), 'confirmation');

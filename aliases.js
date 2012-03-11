@@ -2,7 +2,7 @@
 
  +-----------------------------------------------------------------------+
  | PostfixAdmin Aliases Plugin for RoundCube                             |
- | Version: 0.7.1                                                        |
+ | Version: 0.7.2                                                        |
  | Author: Gianluca Giacometti <php@gianlucagiacometti.it>               |
  | Copyright (C) 2012 Gianluca Giacometti                                |
  | License: GNU General Public License                                   |

@@ -8,8 +8,8 @@ $labels['aliasesmanagealiases'] = 'Gestisci nomi alternativi';
 $labels['aliasesnewalias'] = 'Nuovo nome alternativo';
 $labels['aliaseseditalias'] = 'Modifica nome alternativo';
 $labels['aliasesaliasname'] = 'Nome alternativo';
-$labels['aliasesdisablealias'] = 'Disabilita nome alternativo';
-$labels['aliasesaliasdisabled'] = 'Disabilitato';
+$labels['aliasesenablealias'] = 'Abilita nome alternativo';
+$labels['aliasesaliasenabled'] = 'Abilitato';
 
 
 $messages = array();

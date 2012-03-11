@@ -75,7 +75,7 @@ $rcmail_config['alias_sql_update'] = query;
     query used to update an alias
     the query depends upon your postfixadmin database structure
     placeholders %newalias, %goto and %address must be kept unchanged
-    default query: 'UPDATE alias SET address = %newalias WHERE goto = %goto AND address = %address'
+    default query: 'UPDATE alias SET address = %newalias, modified = %modified WHERE goto = %goto AND address = %address'
     example query: 'UPDATE aliases SET address = %newalias WHERE forwardto = %goto AND address = %address'
 
 $rcmail_config['alias_sql_delete'] = query;
