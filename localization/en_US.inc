@@ -23,6 +23,7 @@ $messages['aliasesaliascreated'] = 'Alias created successfully';
 $messages['aliasesaliascreatederror'] = 'Error while creating alias';
 $messages['aliasesaliasupdated'] = 'Alias updated successfully';
 $messages['aliasesaliasupdatederror'] = 'Error while updating alias';
+$messages['aliasesaliasnameerror'] = 'Error in name format, allowed characters: a-z, A-Z, 0-9, _ and .';
 $messages['aliasesnoalias'] = 'No aliases found';
 $messages['aliasesinvalidalias'] = 'Alias name not valid';
 $messages['aliasesnovalidalias'] = 'Alias name empty';

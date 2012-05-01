@@ -23,6 +23,7 @@ $messages['aliasesaliascreated'] = 'Nome alternativo creato con successo';
 $messages['aliasesaliascreatederror'] = 'Impossibile creare il nome alternativo';
 $messages['aliasesaliasupdated'] = 'Nome alternativo aggiornato con successo';
 $messages['aliasesaliasupdatederror'] = 'Impossibile aggiornare il nome alternativo';
+$messages['aliasesaliasnameerror'] = 'Errore nel formato del nome, sono ammessi solo caratteri a-z, A-Z, 0-9, _ e .';
 $messages['aliasesnoalias'] = 'Nessun nome alternativo trovato';
 $messages['aliasesinvalidalias'] = 'Nome alternativo non valido';
 $messages['aliasesnovalidalias'] = 'Nome alternativo vuoto';

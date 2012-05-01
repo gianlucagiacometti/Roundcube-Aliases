@@ -203,6 +203,13 @@ class aliases extends rcube_plugin {
 		$name = mb_strtolower(trim(get_input_value('_name', RCUBE_INPUT_POST, true)), 'UTF-8');
 		$iid = trim(get_input_value('_iid', RCUBE_INPUT_POST));
 
+		if (!preg_match('/[a-zA-Z0-9_.]/', $name)) {
+			$this->api->output->command('display_message', $this->gettext('aliasesaliasnameerror'), 'error');
+			$this->api->output->add_script("parent.". JS_OBJECT_NAME .".aliases_update_list('update', '0', '". Q($name) ."');");
+			$this->init_setup();
+			return FALSE;
+			}
+
 		$driver = $this->home . '/lib/drivers/' . $this->rc->config->get('aliases_driver', 'sql').'.php';
 
 		if (!is_readable($driver)) {
