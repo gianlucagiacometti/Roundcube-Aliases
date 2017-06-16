@@ -129,7 +129,7 @@ class aliases extends rcube_plugin {
 			}
 		else foreach($this->alias as $idx => $alias) {
 			$table->set_row_attribs(array('id' => 'rcmrow' . $idx));
-			$table->add(null, Q($alias['name']));
+			$table->add(null, rcmail::Q($alias['name']));
 			}
 
 		return html::tag('div', array('id' => 'aliases-list-filters'), $table->show());
@@ -147,7 +147,7 @@ class aliases extends rcube_plugin {
 		else foreach($this->alias as $idx => $alias) {
 			$alias_name = $alias['name'];
 			$tmp_output = new rcube_template('settings');
-			$this->api->output->command('aliases_update_list', $idx == 0 ? 'add-first' : 'add', 'rcmrow' . $idx, Q($alias_name));
+			$this->api->output->command('aliases_update_list', $idx == 0 ? 'add-first' : 'add', 'rcmrow' . $idx, rcmail::Q($alias_name));
 			}
 
 		$this->api->output->send();
@@ -164,7 +164,7 @@ class aliases extends rcube_plugin {
 			'aliases.aliasesnoaliasname'
 			);
 
-		$iid = get_input_value('_iid', RCUBE_INPUT_GPC);
+		$iid = rcube_utils::get_input_value('_iid', RCUBE_INPUT_GPC);
 		if ($iid == '') {
 			$iid = sizeof($this->alias);
 			}
@@ -185,7 +185,7 @@ class aliases extends rcube_plugin {
 		$field_id = 'rcmfd_name';
 		$input_name = new html_inputfield(array('name' => '_name', 'id' => $field_id));
 
-		$out .= html::label($field_id, Q($this->gettext('aliasesaliasname')));
+		$out .= html::label($field_id, rcmail::Q($this->gettext('aliasesaliasname')));
 		$out .= "&nbsp;" . $input_name->show($cur_alias['name']);
 
 		$out .= "<br /><br />";
@@ -200,12 +200,12 @@ class aliases extends rcube_plugin {
 
 		$this->_startup();
 
-		$name = mb_strtolower(trim(get_input_value('_name', RCUBE_INPUT_POST, true)), 'UTF-8');
-		$iid = trim(get_input_value('_iid', RCUBE_INPUT_POST));
+		$name = mb_strtolower(trim(rcube_utils::get_input_value('_name', rcube_utils::INPUT_POST, true)), 'UTF-8');
+		$iid = trim(rcube_utils::get_input_value('_iid', rcube_utils::INPUT_POST));
 
 		if (!preg_match('/[a-zA-Z0-9_.]/', $name)) {
 			$this->api->output->command('display_message', $this->gettext('aliasesaliasnameerror'), 'error');
-			$this->api->output->add_script("parent.". JS_OBJECT_NAME .".aliases_update_list('update', '0', '". Q($name) ."');");
+			$this->api->output->add_script("parent.". JS_OBJECT_NAME .".aliases_update_list('update', '0', '". rcmail::Q($name) ."');");
 			$this->init_setup();
 			return FALSE;
 			}
@@ -237,7 +237,7 @@ class aliases extends rcube_plugin {
 			$elements = explode("@", trim($alias['address']));
 			if ($elements[0] == $name) {
 				$this->api->output->command('display_message', $this->gettext('aliasesaliasexistsindomain'), 'error');
-				$this->api->output->add_script("parent.". JS_OBJECT_NAME .".aliases_update_list('update', '0', '". Q($name) ."');");
+				$this->api->output->add_script("parent.". JS_OBJECT_NAME .".aliases_update_list('update', '0', '". rcmail::Q($name) ."');");
 				$this->init_setup();
 				return FALSE;
 				}
@@ -262,7 +262,7 @@ class aliases extends rcube_plugin {
 			$ret = mail_alias('create', $data);
 			if (!$this->check_driver_error($ret)) { return FALSE; }
 			$this->api->output->command('display_message', $this->gettext('aliasesaliascreated'), 'confirmation');
-			$this->api->output->add_script("parent.". JS_OBJECT_NAME .".aliases_update_list('update', '0', '". Q($name) ."');");
+			$this->api->output->add_script("parent.". JS_OBJECT_NAME .".aliases_update_list('update', '0', '". rcmail::Q($name) ."');");
 			$this->init_setup();
 			}
 // update existing alias
@@ -276,14 +276,14 @@ class aliases extends rcube_plugin {
 			$ret = mail_alias('update', $data);
 			if (!$this->check_driver_error($ret)) { return FALSE; }
 			$this->api->output->command('display_message', $this->gettext('aliasesaliasupdated'), 'confirmation');
-			$this->api->output->add_script("parent.". JS_OBJECT_NAME .".aliases_update_list('update', '0', '". Q($name) ."');");
+			$this->api->output->add_script("parent.". JS_OBJECT_NAME .".aliases_update_list('update', '0', '". rcmail::Q($name) ."');");
 			$this->init_setup();
 			}
 
 		$this->alias = array();
 		$this->_startup();
 
-		rcmail_overwrite_action('plugin.aliases.edit');
+		rcmail::get_instance()->overwrite_action('plugin.aliases.edit');
 		$this->action = 'plugin.aliases.edit';
 		$this->init_html();
 
@@ -310,7 +310,7 @@ class aliases extends rcube_plugin {
 		$data = array();
 		$data['goto'] = rcmail::get_instance()->user->get_username();
 		$elements = explode("@", trim($data['goto']));
-		$ids = get_input_value('_iid', RCUBE_INPUT_GET);
+		$ids = rcube_utils::get_input_value('_iid', RCUBE_INPUT_GET);
 		$data['address'] = $this->alias[$ids]['name'] . "@" . $elements[1];
 
 		$ret = mail_alias('delete', $data);
@@ -326,7 +326,7 @@ class aliases extends rcube_plugin {
 			$this->api->output->add_script("parent.". JS_OBJECT_NAME .".show_contentframe(false);");
 			}
 		else {
-			rcmail_overwrite_action('plugin.aliases.edit');
+			rcmail::get_instance()->overwrite_action('plugin.aliases.edit');
 			$this->action = 'plugin.aliases.edit';
 			$this->init_html();
 			}
