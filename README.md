@@ -26,7 +26,7 @@ Requirements :
 
 To install this plugin, copy all files into /plugin/aliases folder and add it to the plugin array in config/main.inc.php:
 
-// List of active plugins (in plugins/ directory)
+    // List of active plugins (in plugins/ directory)
     
     $rcmail_config['plugins'] = array('aliases');
 
