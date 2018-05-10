@@ -1,0 +1,423 @@
+/**
+ * aliases plugin styles
+ */
+
+#aliases-list
+{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 240px;
+}
+
+.aliases-boxcontent
+{
+  position: absolute;
+  top: 0;
+  bottom: 23px;
+  width: 100%;
+}
+
+#aliases-list-filters
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  border: 1px solid #999999;
+  overflow: auto;
+}
+
+#aliases-list-filters thead th
+{
+  height: 20px;
+}
+
+#aliases-list-filters thead th span
+{
+  position: absolute;
+  top: 2px;
+  left: 4px;
+  right: 25px;
+  height: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+#aliases-list-filters thead th img
+{
+  position: absolute;
+  top: 2px;
+  right: 2px;
+}
+
+#aliases-list-examples
+{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  border: 1px solid #999999;
+  overflow: auto;
+}
+
+#aliases-list div.boxfooter
+{
+  border: 1px solid #999999;
+  border-top: 0;
+  width: 100%;
+}
+
+#aliases-details
+{
+  position: absolute;
+  top: 0;
+  left: 250px;
+  right: 0;
+  bottom: 0;
+  border: 1px solid #999999;
+}
+
+#aliases-advanced,
+#aliases-vacation
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 25px;
+  right: 0;
+  overflow: hidden;
+  border: 1px solid #999999;
+}
+
+span.disableLink
+{
+  float: right;
+  width: 200px;
+  text-align: right;
+}
+
+table.aliases-table,
+table.aliases-examples
+{
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0px;
+}
+
+table.aliases-table tbody td
+{
+  cursor: default;
+}
+
+table.aliases-table tbody td.control,
+#rules-table tbody td.control,
+#actions-table tbody td.control
+{
+  text-align: right;
+}
+
+table.aliases-table tbody td.control a,
+#rules-table tbody td.control a,
+#actions-table tbody td.control a
+{
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-image: url(images/icons.png);
+}
+
+table.aliases-table tbody td.control a {
+  height: 10px;
+}
+
+table.aliases-table tbody td.control a.up_arrow
+{
+  background-position: 0 -2px;
+}
+
+table.aliases-table tbody td.control a.down_arrow
+{
+  background-position: 0 -19px;
+}
+
+#rules-table tbody td.control,
+#actions-table tbody td.control
+{
+  vertical-align: top;
+}
+
+#rules-table tbody td.control a.add,
+#actions-table tbody td.control  a.add
+{
+  margin-left: 5px;
+  background-position: 0 -72px;
+}
+
+#rules-table tbody td.control a.delete,
+#actions-table tbody td.control  a.delete
+{
+  background-position: 0 -54px;
+}
+
+#rules-table tbody td.control a.delete_act,
+#actions-table tbody td.control  a.delete_act
+{
+  background-position: 0 -36px;
+}
+
+#actions-table tbody a.vacsig
+{
+  display: block;
+  width: 16px;
+  height: 16px;
+  background-image: url(images/icons.png);
+  background-position: 0 -108px;
+}
+
+#actions-table tbody a.vacsig_act
+{
+  display: block;
+  width: 16px;
+  height: 16px;
+  background-image: url(images/icons.png);
+  background-position: 0 -90px;
+}
+
+#rules-table,
+#actions-table,
+#rules-table td table.records-table
+{
+  width: 100%;
+}
+
+#rules-table td.selheader,
+#rules-table td.op
+{
+  width: 130px;
+}
+
+#rules-table td.header
+{
+  width: 135px;
+}
+
+#rules-table td.target
+{
+  width: 160px;
+}
+
+#rules-table input
+{
+  width: 150px;
+}
+
+#rules-table input.short
+{
+  width: 100px;
+}
+
+#rules-table select
+{
+  width: 123px;
+}
+
+#rules-table select.short
+{
+  width: 45px;
+}
+
+#rules-table select.long
+{
+  width: 157px;
+}
+
+#rules-table td table.records-table select
+{
+  width: 432px;
+}
+
+#rules-table td table.records-table input
+{
+  width: 426px;
+}
+
+#rules-table td table.records-table input.short
+{
+  width: 406px;
+}
+
+#rules-table td table.records-table input.radio
+{
+  width: auto;
+}
+
+#actions-table td.action
+{
+  width: 165px;
+  vertical-align: top;
+}
+
+#actions-table td.folder
+{
+  width: 420px;
+  vertical-align: top;
+}
+
+#actions-table td.action select
+{
+  width: 160px;
+}
+
+#actions-table td.folder input,
+#actions-table td.folder textarea
+{
+  width: 400px;
+}
+
+#actions-table td.folder select
+{
+  width: 408px;
+}
+
+#actions-table td.folder table.records-table select
+{
+  width: 337px;
+}
+
+#actions-table td.folder table.records-table input,
+#actions-table td.folder table.records-table textarea
+{
+  width: 330px;
+}
+
+#actions-table td.folder table.records-table input.short,
+#actions-table td.folder table.records-table select.short
+{
+  width: 310px;
+}
+
+#actions-table td.folder table.records-table input.checkbox,
+#actions-table td.folder table.records-table input.radio
+{
+  width: auto;
+}
+
+table.records-table td.msg
+{
+  vertical-align: top;
+}
+
+table.records-table td.helpmsg
+{
+  width: 398px;
+  white-space: -moz-pre-wrap !important;
+  white-space: pre-wrap !important;
+  white-space: pre;
+}
+
+#listbuttons
+{
+  position: absolute;
+  bottom: 18px;
+  left: 20px;
+}
+
+#advancedmode
+{
+  white-space: nowrap;
+  text-align: right;
+  position: absolute;
+  bottom: 30px;
+  right: 20px;
+  width: 460px;
+}
+
+#aliases-advancedbox
+{
+  position: absolute;
+  top: 20px;
+  left: 0;
+  bottom: 26px;
+  right: 4px;
+}
+
+#aliases-advanced textarea
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.records-table tbody tr.droptarget td
+{
+  border-top: 2px solid #000000;
+}
+
+.records-table tbody tr.droptargetend td
+{
+  border-bottom: 2px solid #000000;
+}
+
+#aliasesrsdialog h3
+{
+  color: #333;
+  font-size: normal;
+  margin-top: 0.5em;
+  margin-bottom: 1em;
+}
+
+#aliasesrsdialog table td.title
+{
+  color: #666;
+  text-align: right;
+  padding-right: 1em;
+  white-space: nowrap;
+}
+
+#aliasesrsdialog table td input
+{
+  width: 20em;
+}
+
+#aliasesrsdialog .formbuttons
+{
+  margin-top: 1.5em;
+  text-align: center;
+}
+
+input.inputmask
+{
+  color: #999999;
+}
+
+#aliasesactionsmenu a.selected
+{
+  font-weight: bold;
+}
+
+#aliases-advbuttons
+{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+#aliases-vacation .boxcontent {
+  background-color: transparent;
+}
+
+#aliases-vacation textarea,
+#aliases-vacation #actions-table select,
+#aliases-vacation #actions-table input[type=text] {
+  width: 99%;
+  min-width: 390px;
+}

@@ -1,0 +1,107 @@
+/**
+ * aliases plugin styles
+ */
+
+#aliases-list
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 260px;
+  bottom: 0;
+}
+
+#aliases-list-aliases
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  overflow: auto;
+}
+
+#aliases-list h2 img
+{
+  position: absolute;
+  top: 7px;
+  right: 8px;
+}
+
+#aliases-details
+{
+  position: absolute;
+  top: 0;
+  left: 270px;
+  right: 0;
+  bottom: 0;
+}
+
+span.enableLink
+{
+  float: right;
+  width: 200px;
+  text-align: right;
+}
+
+span.enableLink select
+{
+  margin: 0; /* Safari by default adds a margin */
+  padding: 4px;
+  border: 1px solid #b2b2b2;
+  border-radius: 4px;
+}
+
+span.enableLink select:focus
+{
+  border-color: #4787b1;
+  box-shadow: 0 0 5px 2px rgba(71,135,177, 0.9);
+  outline: none;
+}
+
+table.aliases-table
+{
+  width: 100%;
+}
+
+table.aliases-table tbody td
+{
+  cursor: default;
+}
+
+table.aliases-table tbody td.control,
+#rules-table tbody td.control,
+#actions-table tbody td.control
+{
+  text-align: right;
+}
+
+table.aliases-table tbody td.control a
+{
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-image: url(images/icons.png);
+}
+
+table.aliases-table tbody td.control a {
+  height: 12px;
+}
+
+.listing tbody tr.droptarget td
+{
+  border-top: 2px solid #0e5266;
+  background-color: #D9ECF4;
+}
+
+.listing tbody tr.droptargetend td
+{
+  border-bottom: 2px solid #0e5266;
+  background-color: #D9ECF4;
+}
+
+input.inputmask
+{
+  color: #999999;
+}

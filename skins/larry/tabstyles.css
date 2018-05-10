@@ -1,0 +1,15 @@
+/**
+ * aliases plugin styles (tab styles)
+ */
+
+#settings-sections #settingstabpluginaliases a
+{
+  background-image: url(images/listicons.png);
+  background-position: 6px -2px;
+}
+
+#settings-sections #settingstabpluginaliases.selected a
+{
+  background-image: url(images/listicons.png);
+  background-position: 6px -25px;
+}
