@@ -1,4 +1,4 @@
-# PostfixAdmin Aliases Plugin for RoudCube
+# PostfixAdmin Aliases Plugin for RoudCube 1.3.6
 
 
 AUTHOR
