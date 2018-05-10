@@ -1,8 +1,5 @@
-+------------------------------------------+
-| PostfixAdmin Aliases Plugin for RoudCube |
-+------------------------------------------+
-
-
+PostfixAdmin Aliases Plugin for RoudCube
+___
 
 AUTHOR
 
