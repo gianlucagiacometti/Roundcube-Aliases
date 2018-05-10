@@ -179,7 +179,20 @@ $(document).ready(function() {
 							return false;
 						}
 					}
-					rcmail.gui_objects.editform.submit();
+
+					rcmail.addEventListener('plugin.aliases.checkaliasdomain', check_duplicates);
+					rcmail.http_post('plugin.aliases.check', { _newalias: input_name.value });
+					function check_duplicates(response)
+					{
+				    		if (response != "") {
+							alert(rcmail.get_label('aliasesaliasexistsindomain','aliases'));
+							input_name.focus();
+							return false;
+						}
+						else {
+							rcmail.gui_objects.editform.submit();
+						}
+					}
 				}, true);
 
 			}

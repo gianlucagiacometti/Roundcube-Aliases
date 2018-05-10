@@ -69,6 +69,7 @@ class aliases extends rcube_plugin
 		$this->register_action('plugin.aliases.move', array($this, 'move'));
 		$this->register_action('plugin.aliases.save', array($this, 'save'));
 		$this->register_action('plugin.aliases.delete', array($this, 'delete'));
+		$this->register_action('plugin.aliases.check', array($this, 'check_alias_domain'));
 
 	}
 
@@ -231,6 +232,46 @@ class aliases extends rcube_plugin
 		return $out;
 	}
 
+	function check_alias_domain()
+	{
+		$rcmail = rcmail::get_instance();
+		$driver = $this->home . '/lib/drivers/' . $rcmail->config->get('aliases_driver', 'sql').'.php';
+		$new_alias = rcube_utils::get_input_value('_newalias', rcube_utils::INPUT_POST, true);
+
+		$this->api->output->add_label('aliases.aliasesaliasexistsindomain');
+
+		if (!is_readable($driver)) {
+			rcube::raise_error(array('code' => 600, 'type' => 'php', 'file' => __FILE__, 'message' => "aliases plugin: Unable to open driver file $driver"), true, false);
+			return $this->gettext('aliasesinternalerror');
+			}
+
+		require_once($driver);
+
+		if (!function_exists('mail_alias')) {
+			rcube::raise_error(array('code' => 600, 'type' => 'php', 'file' => __FILE__, 'message' => "aliases plugin: function mail_alias_read not found in driver $driver"), true, false);
+			return $this->gettext('aliasesinternalerror');
+			}
+
+		$data = array();
+		$data['goto'] = rcmail::get_instance()->user->get_username();
+		$elements = explode("@", trim($data['goto']));
+		$data['address'] = $name . "@" . $elements[1];
+		$data['domain'] = $elements[1];
+
+		$ret = mail_alias('allaliases', $data);
+		if (!$this->check_driver_error($ret)) { return FALSE; }
+
+		$error = "";
+		foreach ($data['address'] as $alias) {
+			$element = explode("@", trim($alias['address']));
+			if ($element[0] == $new_alias) {
+				$error = $this->gettext('aliasesaliasexistsindomain');
+				}
+			}
+
+		$rcmail->output->command('plugin.aliases.checkaliasdomain', $error);
+	}
+
 	function save()
 	{
 		$rcmail = rcube::get_instance();
@@ -249,14 +290,14 @@ class aliases extends rcube_plugin
 		$driver = $this->home . '/lib/drivers/' . $rcmail->config->get('aliases_driver', 'sql').'.php';
 
 		if (!is_readable($driver)) {
-			raise_error(array('code' => 600, 'type' => 'php', 'file' => __FILE__, 'message' => "aliases plugin: Unable to open driver file $driver"), true, false);
+			rcube::raise_error(array('code' => 600, 'type' => 'php', 'file' => __FILE__, 'message' => "aliases plugin: Unable to open driver file $driver"), true, false);
 			return $this->gettext('aliasesinternalerror');
 			}
 
 		require_once($driver);
 
 		if (!function_exists('mail_alias')) {
-			raise_error(array('code' => 600, 'type' => 'php', 'file' => __FILE__, 'message' => "aliases plugin: function mail_alias_read not found in driver $driver"), true, false);
+			rcube::raise_error(array('code' => 600, 'type' => 'php', 'file' => __FILE__, 'message' => "aliases plugin: function mail_alias_read not found in driver $driver"), true, false);
 			return $this->gettext('aliasesinternalerror');
 			}
 
@@ -265,23 +306,6 @@ class aliases extends rcube_plugin
 		$elements = explode("@", trim($data['goto']));
 		$data['address'] = $name . "@" . $elements[1];
 		$data['domain'] = $elements[1];
-
-// check alias existence in domain
-		$ret = mail_alias('allaliases', $data);
-		if (!$this->check_driver_error($ret)) { return FALSE; }
-
-		foreach ($data['address'] as $alias) {
-			$element = explode("@", trim($alias['address']));
-			if ($element[0] == $name) {
-				$this->api->output->command('display_message', $this->gettext('aliasesaliasexistsindomain'), 'error');
-				$this->gen_setup();
-				return FALSE;
-				}
-			}
-
-		$data['goto'] = $elements[0] . "@" . $elements[1];
-		$elements = explode("@", trim($data['goto']));
-		$data['address'] = $name . "@" . $elements[1];
 		$ret = mail_alias('read', $data);
 		if (!$this->check_driver_error($ret)) { return FALSE; }
 // create new alias
@@ -293,7 +317,7 @@ class aliases extends rcube_plugin
 			$data['domain'] = $elements[1];
 			$data['created'] = date('Y-m-d H:i:s');
 			$data['modified'] = date('Y-m-d H:i:s');
-			$data['active'] = 'TRUE';
+			$data['active'] = $active;
 			$ret = mail_alias('create', $data);
 			if (!$this->check_driver_error($ret)) { return FALSE; }
 			$this->api->output->command('display_message', $this->gettext('aliasesaliascreated'), 'confirmation');
@@ -324,14 +348,14 @@ class aliases extends rcube_plugin
 		$driver = $this->home . '/lib/drivers/' . $rcmail->config->get('aliases_driver', 'sql').'.php';
 
 		if (!is_readable($driver)) {
-			raise_error(array('code' => 600, 'type' => 'php', 'file' => __FILE__, 'message' => "aliases plugin: Unable to open driver file $driver"), true, false);
+			rcube::raise_error(array('code' => 600, 'type' => 'php', 'file' => __FILE__, 'message' => "aliases plugin: Unable to open driver file $driver"), true, false);
 			return $this->gettext('aliasesinternalerror');
 			}
 
 		require_once($driver);
 
 		if (!function_exists('mail_alias')) {
-			raise_error(array('code' => 600, 'type' => 'php', 'file' => __FILE__, 'message' => "aliases plugin: function mail_alias_read not found in driver $driver"), true, false);
+			rcube::raise_error(array('code' => 600, 'type' => 'php', 'file' => __FILE__, 'message' => "aliases plugin: function mail_alias_read not found in driver $driver"), true, false);
 			return $this->gettext('aliasesinternalerror');
 			}
 
