@@ -8,8 +8,11 @@ $labels['aliasesmanagealiases'] = 'Verwalte Aliase';
 $labels['aliasesnewalias'] = 'Neuer Alias';
 $labels['aliaseseditalias'] = 'Bearbeite Alias';
 $labels['aliasesaliasname'] = 'Alias';
-$labels['aliasesenable'] = 'Aktivieren/Deaktivieren';
-$labels['aliasesstatustoggled'] = 'Status geändert';
+$labels['aliasesenablealias'] = 'Aktivieren';
+$labels['aliasesaliasenabled'] = 'Aktiviert';
+$labels['aliasesaliasdisabled'] = 'deaktiviert';
+$labels['aliasestrue'] = 'Ja';
+$labels['aliasesfalse'] = 'Nein';
 
 
 $messages = array();

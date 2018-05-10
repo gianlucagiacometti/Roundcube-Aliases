@@ -10,6 +10,9 @@ $labels['aliaseseditalias'] = 'Edit alias';
 $labels['aliasesaliasname'] = 'Alias';
 $labels['aliasesenablealias'] = 'Enable alias';
 $labels['aliasesaliasenabled'] = 'Enabled';
+$labels['aliasesaliasdisabled'] = 'disabled';
+$labels['aliasestrue'] = 'Yes';
+$labels['aliasesfalse'] = 'No';
 
 
 $messages = array();

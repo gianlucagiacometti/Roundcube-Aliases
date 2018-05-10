@@ -8,8 +8,11 @@ $labels['aliasesmanagealiases'] = 'Gestisci nomi alternativi';
 $labels['aliasesnewalias'] = 'Nuovo nome alternativo';
 $labels['aliaseseditalias'] = 'Modifica nome alternativo';
 $labels['aliasesaliasname'] = 'Nome alternativo';
-$labels['aliasesenablealias'] = 'Abilita nome alternativo';
+$labels['aliasesenablealias'] = 'Abilita';
 $labels['aliasesaliasenabled'] = 'Abilitato';
+$labels['aliasesaliasdisabled'] = 'disbilitato';
+$labels['aliasestrue'] = 'Si';
+$labels['aliasesfalse'] = 'No';
 
 
 $messages = array();
@@ -24,7 +27,7 @@ $messages['aliasesaliascreatederror'] = 'Impossibile creare il nome alternativo'
 $messages['aliasesaliasupdated'] = 'Nome alternativo aggiornato con successo';
 $messages['aliasesaliasupdatederror'] = 'Impossibile aggiornare il nome alternativo';
 $messages['aliasesaliasnameerror'] = 'Errore nel formato del nome, sono ammessi solo caratteri a-z, A-Z, 0-9, _ e .';
-$messages['aliasesnoalias'] = 'Nessun nome alternativo trovato';
+$messages['aliasesnoaliases'] = 'Nessun nome alternativo trovato';
 $messages['aliasesinvalidalias'] = 'Nome alternativo non valido';
 $messages['aliasesnovalidalias'] = 'Nome alternativo vuoto';
 $messages['aliasessuccessfullysaved'] = 'Nome alternativo salvato con successo';
