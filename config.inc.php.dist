@@ -13,7 +13,7 @@ $rcmail_config['aliases_sql_dsn'] = 'pgsql://username:password@host/database';
 
 // The SQL query used to select all mailbox aliases.
 // default mailbox alias to itself is excluded and managed by forward plugin.
-$rcmail_config['aliases_sql_aliases'] = 'SELECT * FROM alias WHERE goto = %goto AND address != %goto ORDER BY address';
+$rcmail_config['aliases_sql_aliases'] = 'SELECT * FROM alias WHERE goto = %goto AND domain = %domain AND address != %goto ORDER BY address';
 
 // The SQL query used to select all domain aliases but user's.
 // Need to avoid alias duplicates in the domain.
@@ -23,15 +23,12 @@ $rcmail_config['aliases_sql_allaliases'] = 'SELECT * FROM alias WHERE domain = %
 $rcmail_config['aliases_sql_read'] = 'SELECT * FROM alias WHERE goto = %goto AND address = %address';
 
 // The SQL query used to update an alias.
-$rcmail_config['aliases_sql_update'] = 'UPDATE alias SET address = %newalias, modified = %modified WHERE goto = %goto AND address = %address';
+$rcmail_config['aliases_sql_update'] = 'UPDATE alias SET address = %newalias, modified = %modified, active = %active WHERE goto = %goto AND address = %address';
 
 // The SQL query used to delete an alias.
 $rcmail_config['aliases_sql_delete'] = 'DELETE FROM alias WHERE address = %address AND goto = %goto';
 
 // The SQL query used to insert an alias.
 $rcmail_config['aliases_sql_create'] = 'INSERT INTO alias (address, goto, domain, created, modified, active) VALUES (%address, %goto, %domain, %created, %modified, %active)';
-
-// The SQL query used to toggle an alias status.
-$rcmail_config['aliases_sql_toggle'] = 'UPDATE alias SET active = NOT active WHERE goto = %goto AND address = %address';
 
 ?>
