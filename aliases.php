@@ -24,7 +24,7 @@ class aliases extends rcube_plugin
 {
 	public $task = 'settings';
 
-	protected $alias;
+	protected $alias = array();
 	protected $action;
 	protected $rc;
 
