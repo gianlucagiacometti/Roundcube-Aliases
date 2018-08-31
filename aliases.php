@@ -155,7 +155,7 @@ class aliases extends rcube_plugin
 
 		if (sizeof($this->alias) == 0) {
 			// no alias exist
-			$table->add(array('colspan' => '2'), rcube_utils::rep_specialchars_output($this->gettext('aliasesnoaliases')));
+			$table->add(array('colspan' => '2'), rcube_utils::rep_specialchars_output($this->gettext('aliasesnoalias')));
 		}
 		else foreach($this->alias as $idx => $aliasx) {
 			$args = rcube::get_instance()->plugins->exec_hook('aliases_list_aliases', array('idx' => $idx, 'name' => $aliasx['name'], 'enable' => $aliasx['enable']));
