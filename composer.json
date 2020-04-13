@@ -3,7 +3,7 @@
   "description": "Manage postfix aliases from within Roundcube",
   "keywords": ["postfix","alias"],
   "homepage": "http://github.com/gianlucagiacometti/Roundcube-Plugin-Alias/",
-  "license": "GPL-2.0",
+  "license": "GPL-2.0-or-later",
   "type": "roundcube-plugin",
   "version": "1.3.6",
   "authors": [
