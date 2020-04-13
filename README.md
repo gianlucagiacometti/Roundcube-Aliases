@@ -2,7 +2,7 @@
 
 ***NOTE***<br />
 ***THIS PLUGIN DOES NOT WORK IN RC 1.4.x AND ITS DEVELOPMENT IS DICONTINUED***<br />
-***all functionalities will be migrated into the new plugin roundcube-toolbox***<br />
+***all functionalities will be migrated into the new plugin [roundcube-toolbox](https://github.com/gianlucagiacometti/roundcube-toolbox)***<br />
 
 
 AUTHOR
