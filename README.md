@@ -1,4 +1,4 @@
-# PostfixAdmin Aliases Plugin for RoudCube 1.3.6
+# DEPRECATED
 
 ***NOTE***<br />
 ***THIS PLUGIN DOES NOT WORK IN RC 1.4.x AND ITS DEVELOPMENT IS DICONTINUED***<br />
